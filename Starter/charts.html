@@ -1,0 +1,101 @@
+<style>
+    .donut-inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 76px;
+        width: 50px;
+        margin-left: -25px;
+        margin-top: -54px;
+        text-align: center;
+    }
+    .morris-hover{position:absolute;z-index:1000}.morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255,255,255,0.8);border:solid 2px rgba(230,230,230,0.8);font-family:sans-serif;font-size:12px;text-align:center}.morris-hover.morris-default-style .morris-hover-row-label{font-weight:bold;margin:0.25em 0}
+    .morris-hover.morris-default-style .morris-hover-point{white-space:nowrap;margin:0.1em 0}
+    .donut-inner
+    {
+        margin-top: -100px;
+        margin-bottom: 100px;
+    }
+    .donut-inner h5
+    {
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+    .donut-inner span {font-size: 12px;}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Bootstrap Example</title>
+ <!--         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+    </head>
+    <body>
+        <form  class="form-horizontal">
+            <div class="container">
+                <h2>Bordered Table</h2>
+                <p>The .table-bordered class adds borders to a table:</p>            
+                <table class="table table-bordered">    
+                    <tbody>
+                        <tr>
+                            <td>Credit Card</td>
+                            <td><input type="text" name="card" mask="9999-9999-9999-9999" clean="true" ng-model="card"></td>        
+                        </tr>
+                        <tr>
+                            <td>Mary</td>
+                            <td><input type="text" name="phone" mask="(999) 999-9999" clean="true" ng-model="phone"></td>        
+                        </tr>      
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-6" >
+                    <div id="donut-example" style="height: 250px;"></div>
+                </div>
+                <div class="col-sm-6"  >
+                    <canvas chart-colours="colors" id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-legend="true"> </canvas> 
+                    <div class="donut-inner">
+                        <h5>{{spendPercentage}} %</h5>                        
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-6" >
+                    <canvas id="line" chart-colours="lineColors" class="chart chart-line" chart-data="dataLine" chart-labels="labelsLine" chart-legend="true" chart-series="seriesLine" chart-click="onClick" >
+                    </canvas> 
+                </div>
+                <div class="col-sm-6" >
+                    <canvas id="bar" chart-colours="barColors" class="chart chart-bar"  chart-data="barData" chart-labels="barLabels" chart-legend="true" chart-series="seriesLine"></canvas>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-6 progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                         aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        40% Complete (success)
+                    </div>
+                </div>
+                <div class="col-sm-6">                    
+                    <canvas   chart-colours="singlelineColors" class="chart chart-line" chart-data="singledataLine" chart-labels="singlelabelsLine" chart-series="singleseriesLine" chart-click="onClick" >
+                    </canvas>                     
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <div id="line-example" style="height: 300px;"></div>
+                </div>
+
+                <div class="col-sm-6">                    
+                            <nvd3 options='barSingleOptions' data='barSingleData'></nvd3>
+                </div>
+            </div>
+
+        </form>
+    </body>
+</html>
+
+

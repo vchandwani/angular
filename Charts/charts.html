@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
+        <!--<script src="bower_components/angular/angular.js"></script>-->    
+        <script src="app.js"></script>    
+        <script src="bower_components/Chart.js/Chart.min.js"></script>
+        <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+        <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl">
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">AngularJS</a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/angular/example/Starter/#"><i class="fa fa-home"></i>Home</a></li>
+                        <li><a href="/angular/example/Starter/#/second"><i class="fa fa-home"></i>Second</a></li>
+                        <li><a href="#"><i class="fa fa-home"></i>Charts</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+
+            First Name: <input type="text" ng-model="firstName"><br>
+            Last Name: <input type="text" ng-model="lastName"><br>
+            <br>
+            Full Name: {{firstName + " " + lastName}}
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3><span class="label label-default">Sample Charts</span></h3>
+
+                </div>
+                <div class="col-lg-6">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <canvas id="line" class="chart chart-line" chart-data="data" chart-colours="lineColors"
+                            chart-labels="labels" chart-legend="true" chart-series="series"
+                            chart-click="onClick" >
+                    </canvas>
+                </div>
+                <div class="col-lg-6">
+                    <canvas id="bar" class="chart chart-bar" chart-colours="barColors"
+                            chart-data="barData" chart-labels="barLabels"> chart-series="barSeries"
+                    </canvas>
+
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <canvas id="doughnut" class="chart chart-doughnut"
+                            chart-data="donData" chart-labels="donLabels" chart-colours="donColors">
+                    </canvas> 
+                </div>
+                <div class="col-lg-6">
+                    <canvas id="polar-area" class="chart chart-polar-area"
+                            chart-data="polarData" chart-labels="polarLabels">
+                    </canvas> 
+                </div>
+
+
+            </div>
+        </div>
+    </body>
+</html>
